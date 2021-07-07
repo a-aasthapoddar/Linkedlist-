@@ -2,17 +2,17 @@
 Implementing linkedlist using java
 
 
-  //creating a node
+  
       class Node{
         int data;
         Node next;
       }
       
-  //class linkedlist to insert and print elements in list
+  
       class linkedlist{
         Node head;
         
-  //insert method to take elements for list
+ 
         public void insert(int data){     
           Node node = new Node();
           node.data = data;
@@ -28,7 +28,7 @@ Implementing linkedlist using java
           }
         }
   
-  //print method to print the list
+  
         public void printlist(){         
           Node node = head;
           while(node!=null){
@@ -38,7 +38,7 @@ Implementing linkedlist using java
         }
       }
 
- //main class
+ 
       public class Main{               
         public static void main(String [] args){          
           linkedlist list = new linkedlist();
