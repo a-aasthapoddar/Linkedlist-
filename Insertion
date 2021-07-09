@@ -1,0 +1,75 @@
+public class Main
+{
+    Node head;
+    static class Node{
+        int data;
+        Node next;
+        
+        Node(int data){
+            this.data = data;
+            next = null;
+        }
+    }
+    
+    public void printlist(){
+        Node n = head;
+        while(n!=null){
+            System.out.print(n.data+" ");
+            n = n.next;
+        }
+    }
+    
+    public void insertAtStart(int data){
+        Node new_node = new Node(data);
+        new_node.next = head;
+        head = new_node;
+        
+    }
+    
+    public void insertAtBetween(int index, int data){
+        Node new_data = new Node(data);
+        Node n = head;
+        for(int i=0; i<index-1; i++){
+            n = n.next;
+        }
+        new_data.next = n.next;
+        n.next = new_data;
+    }
+    
+    public void insertAtEnd(int data){
+        Node new_data = new Node(data);
+        Node n = head;
+        while(n.next!=null){
+            n = n.next;
+        }
+        n.next = new_data;
+    }
+    
+    public static void main(String[] args) {
+		Main list = new Main();
+		
+		list.head = new Node(1);
+		Node second = new Node(2);
+		Node third = new Node(3);
+		
+		list.head.next = second;
+		second.next = third;
+		
+		
+		list.printlist();
+		System.out.println();
+		
+		list.insertAtStart(5);
+		list.printlist();
+		System.out.println();
+		
+		list.insertAtBetween(2,20);
+		list.printlist();
+		System.out.println();
+		
+		list.insertAtEnd(40);
+		list.printlist();
+		
+	}
+	
+}
